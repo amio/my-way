@@ -1,0 +1,24 @@
+{
+  "name": "my-way",
+  "version": "1.0.0",
+  "description": "Elegant path matcher",
+  "author": "amio <amio.cn@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "tap test/*.spec.ts --100",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.7",
+    "tap": "^14.2.2",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.1"
+  },
+  "keywords": [
+    "match",
+    "path",
+    "route"
+  ]
+}

@@ -7,11 +7,14 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
+    "pretest": "npm run build",
     "test": "tap test/*.spec.ts --100",
+    "posttest": "tap --coverage-report=json && codecov -f coverage/coverage-final.json",
     "prepack": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^12.0.7",
+    "codecov": "^3.5.0",
     "tap": "^14.2.2",
     "ts-node": "^8.2.0",
     "typescript": "^3.5.1"

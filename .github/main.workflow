@@ -8,14 +8,9 @@ action "Install" {
   args = "ci"
 }
 
-action "Build" {
-  uses = "actions/npm@master"
-  args = "run build"
-  needs = ["Install"]
-}
-
 action "Test" {
   uses = "actions/npm@master"
   args = "test"
-  needs = ["Build"]
+  needs = ["Install"]
+  secrets = ["COVERALLS_REPO_TOKEN", "CODECOV_TOKEN"]
 }

@@ -25,6 +25,17 @@ tap.test(testRouteSimple, t => {
   runTest(t, testRouteSimple, suite)
 })
 
+
+const testRouteMultiOptional = '/:branch?/:token?'
+tap.test(testRouteMultiOptional, t => {
+  const suite = {
+    '/': {},
+    '/master': { branch: 'master' },
+    '/master/12345': { branch: 'master', token: '12345' }
+  }
+  runTest(t, testRouteMultiOptional, suite)
+})
+
 const testRouteMultiRegex = '/user/:id<\\d+>/:status?<active|inactive>'
 tap.test(testRouteMultiRegex, t => {
   const suite = {

@@ -1,6 +1,7 @@
 # my-way
 
 [![npm version][npm-src]][npm-href]
+[![Coverage Status][coverage-src]][coverage-href]
 [![Install size][bundlephobia-src]][bundlephobia-href]
 [![License][license-src]][license-href]
 
@@ -72,6 +73,8 @@ matchRoute('/:owner/:repo/:path*', '/amio/my-way/src/index.ts')
 
 [npm-src]: https://badgen.net/npm/v/my-way
 [npm-href]: https://www.npmjs.com/package/my-way
+[coverage-src]: https://badgen.net/codecov/c/github/amio/my-way
+[coverage-href]: https://codecov.io/gh/amio/my-way
 [bundlephobia-src]: https://badgen.net/bundlephobia/min/my-way
 [bundlephobia-href]: https://packagephobia.now.sh/result?p=my-way
 [license-src]: https://badgen.net/badge/license/MIT

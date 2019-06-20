@@ -77,6 +77,7 @@ matchRoute('/:owner/:repo/:path*', '/amio/my-way/src/index.ts')
 ## Caveats
 
 - Don't support multi slashes in pathname
+
   ```javascript
   matchRoute('/:owner/:repo', '//my-way/')
   // null

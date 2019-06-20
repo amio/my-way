@@ -46,14 +46,17 @@ matchRoute('/users/:id', '/users/123/?query=will-be-omitted')
 matchRoute('/users/:id<\\d+>', '/users/alice')
 // null
 
+matchRoute('/users/:id<\\d+>', '/users/123')
+// { id: "123" }
+
 matchRoute('/users/:id/:status?<active|inactive>', '/users/123')
 // { id: "123" }
 
-matchRoute('/users/:id/:status?<active|inactive>', '/users/123/blue')
-// null
-
 matchRoute('/users/:id/:status?<active|inactive>', '/users/123/active')
 // { id: "123", status: "active" }
+
+matchRoute('/users/:id/:status?<active|inactive>', '/users/123/blue')
+// null
 
 matchRoute('/:owner/:repo/:path+', '/amio/my-way')
 // null
@@ -70,6 +73,14 @@ matchRoute('/:owner/:repo/:path*', '/amio/my-way')
 matchRoute('/:owner/:repo/:path*', '/amio/my-way/src/index.ts')
 // { owner: "amio", repo: "my-way", path: "src/index.ts" }
 ```
+
+# Caveats
+
+- Don't support multi slashes in pathname
+  ```javascript
+  matchRoute('/:owner/:repo', '//my-way/')
+  // null
+  ```
 
 [npm-src]: https://badgen.net/npm/v/my-way
 [npm-href]: https://www.npmjs.com/package/my-way

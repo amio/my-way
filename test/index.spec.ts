@@ -20,7 +20,8 @@ tap.test(testRouteSimple, t => {
     '/user/eiyo': null,
     '/user/123/eiyo': null,
     '/user/123': { id: '123' },
-    '/user/123/': { id: '123' }
+    '/user/123/': { id: '123' },
+    '//123': null
   }
   runTest(t, testRouteSimple, suite)
 })

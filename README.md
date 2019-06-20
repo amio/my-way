@@ -7,7 +7,7 @@
 
 Minimal path matcher.
 
-# Usage
+## Usage
 
 ```javascript
 import matchRoute from 'my-way'
@@ -28,7 +28,7 @@ const matched = matchRoute(route, '/users/123') // => { id: "123" }
 - `/:name?<regex>` Optional segment with regex matching
 - `/:name*<regex>` Optional rest segment with regex matching
 
-# Examples
+## Examples
 
 ```javascript
 matchRoute('/users/:id', '/users')
@@ -74,7 +74,7 @@ matchRoute('/:owner/:repo/:path*', '/amio/my-way/src/index.ts')
 // { owner: "amio", repo: "my-way", path: "src/index.ts" }
 ```
 
-# Caveats
+## Caveats
 
 - Don't support multi slashes in pathname
   ```javascript

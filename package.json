@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Elegant path matcher",
   "author": "amio <amio.cn@gmail.com>",
+  "repository": "amio/my-way",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {

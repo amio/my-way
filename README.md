@@ -74,12 +74,12 @@ matchRoute('/:owner/:repo/:path*', '/amio/my-way/src/index.ts')
 // { owner: "amio", repo: "my-way", path: "src/index.ts" }
 ```
 
-## Caveats
+## Not supported
 
-- Don't support multi slashes in pathname
+- Multi slashes in pathname
 
   ```javascript
-  matchRoute('/:owner/:repo', '//my-way/')
+  matchRoute('/:owner/:repo', '//my-way')
   // null
   ```
 

@@ -88,6 +88,6 @@ matchRoute('/:owner/:repo/:path*', '/amio/my-way/src/index.ts')
 [coverage-src]: https://badgen.net/codecov/c/github/amio/my-way
 [coverage-href]: https://codecov.io/gh/amio/my-way
 [bundlephobia-src]: https://badgen.net/bundlephobia/min/my-way
-[bundlephobia-href]: https://packagephobia.now.sh/result?p=my-way
+[bundlephobia-href]: https://bundlephobia.com/result?p=my-way
 [license-src]: https://badgen.net/badge/license/MIT
 [license-href]: LICENSE.md

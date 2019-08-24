@@ -54,5 +54,6 @@ function matchRoute(pattern: string, path: string): RouteArgs {
   }
 }
 
+// @ts-ignore
 module.exports = matchRoute
 export default matchRoute

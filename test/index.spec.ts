@@ -26,7 +26,6 @@ tap.test(testRouteSimple, t => {
   runTest(t, testRouteSimple, suite)
 })
 
-
 const testRouteMultiOptional = '/:branch?/:token?'
 tap.test(testRouteMultiOptional, t => {
   const suite = {
@@ -92,6 +91,10 @@ tap.test(testRoutePlusSegment, t => {
     '/david/dep/https://eiyo.com': {
       topic: 'dep',
       path: 'https://eiyo.com'
+    },
+    '/david/d%20e%20p/https%3A%2F%2Feiyo.com': {
+      topic: 'd e p',
+      path: 'https://eiyo.com'
     }
   }
   runTest(t, testRoutePlusSegment, suite)
@@ -115,6 +118,10 @@ tap.test(testRouteStarSegment, t => {
     '/eiyo/~!@#%$^&*()-+_=/\\': {
       repo: 'eiyo',
       path: '~!@#%$^&*()-+_=/\\'
+    },
+    '/eiyo/%2F%2a': {
+      repo: 'eiyo',
+      path: '/*'
     }
   })
 })

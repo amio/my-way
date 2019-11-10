@@ -19,7 +19,7 @@ function matchRoute(pattern: string, path: string): RouteArgs {
     }
 
     if (flag === '+' || flag === '*') {
-      parsedArgs[name] = path.slice(parsedPathSegment.index + 1)
+      parsedArgs[name] = safeDecodeURIComponent(path.slice(parsedPathSegment.index + 1))
       return parsedArgs
     }
 
@@ -34,12 +34,12 @@ function matchRoute(pattern: string, path: string): RouteArgs {
       case ':': // named segment
         if (reg) {
           if (new RegExp(`^${reg}$`).test(value)) {
-            parsedArgs[name] = value
+            parsedArgs[name] = safeDecodeURIComponent(value)
           } else {
             return null
           }
         } else {
-          parsedArgs[name] = value
+          parsedArgs[name] = safeDecodeURIComponent(value)
         }
     }
 
@@ -51,6 +51,14 @@ function matchRoute(pattern: string, path: string): RouteArgs {
     return parsedArgs
   } else {
     return null
+  }
+}
+
+function safeDecodeURIComponent (uri: string): string {
+  try {
+    return decodeURIComponent(uri)
+  } catch (e) {
+    return uri
   }
 }
 

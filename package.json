@@ -14,11 +14,11 @@
     "prepack": "npm run build"
   },
   "devDependencies": {
-    "@types/node": "^12.7.2",
-    "codecov": "^3.5.0",
-    "tap": "^14.6.1",
-    "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
+    "@types/node": "^12.12.7",
+    "codecov": "^3.6.1",
+    "tap": "^14.9.2",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.7.2"
   },
   "keywords": [
     "match",

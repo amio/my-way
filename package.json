@@ -1,6 +1,6 @@
 {
   "name": "my-way",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Robust path matcher under 1KB",
   "author": "amio <amio.cn@gmail.com>",
   "repository": "amio/my-way",

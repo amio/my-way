@@ -1,7 +1,7 @@
 {
   "name": "my-way",
   "version": "1.0.2",
-  "description": "Elegant path matcher",
+  "description": "Robust path matcher under 1KB",
   "author": "amio <amio.cn@gmail.com>",
   "repository": "amio/my-way",
   "license": "MIT",

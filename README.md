@@ -58,20 +58,23 @@ matchRoute('/users/:id/:status?<active|inactive>', '/users/123/active')
 matchRoute('/users/:id/:status?<active|inactive>', '/users/123/blue')
 // null
 
-matchRoute('/:owner/:repo/:path+', '/amio/my-way')
-// null
-
 matchRoute('/:owner/:repo/:path+', '/amio/my-way/package.json')
 // { owner: "amio", repo: "my-way", path: "package.json" }
 
 matchRoute('/:owner/:repo/:path+', '/amio/my-way/src/index.ts')
 // { owner: "amio", repo: "my-way", path: "src/index.ts" }
 
+matchRoute('/:owner/:repo/:path+', '/amio/my-way')
+// null
+
 matchRoute('/:owner/:repo/:path*', '/amio/my-way')
 // { owner: "amio", repo: "my-way" }
 
-matchRoute('/:owner/:repo/:path*', '/amio/my-way/src/index.ts')
-// { owner: "amio", repo: "my-way", path: "src/index.ts" }
+matchRoute('/:owner/:repo/:url*', '/amio/my-way/https://github.com/amio/my-way')
+// { owner: "amio", repo: "my-way", url: "https://github.com/amio/my-way" }
+
+matchRoute('/:owner/:repo/:url*', '/amio/my-way/https%3A%2F%2Fgithub.com%2Famio%2Fmy-way')
+// { owner: "amio", repo: "my-way", url: "https://github.com/amio/my-way" }
 ```
 
 ## Not supported
